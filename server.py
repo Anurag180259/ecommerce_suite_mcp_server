@@ -45,6 +45,10 @@ async def getStoresForAdmin(verificationStatus: str) -> dict[str, Any]:
 
     param={"verificationStatus": verificationStatus}
 
+    if(jwtToken == None):
+        return{
+            "error":"Missing JWT Token. Please Login."
+        }
     header = {"authorization": jwtToken}
 
     async with httpx.AsyncClient() as client:
@@ -676,7 +680,7 @@ async def getStoresListForSeller()-> dict[str, Any]:
         return{
             "error":"Missing JWT Token. Please Login."
         }
-        
+
     header={
         "authorization":jwtToken
     }
