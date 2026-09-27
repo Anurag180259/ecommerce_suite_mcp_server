@@ -81,13 +81,7 @@ Verify the installation:
 uv --version
 ```
 
-### 3. Initialize the Project
-
-```bash
-uv init
-```
-
-Then install the dependencies:
+### 3. Installing the dependencies
 
 ```bash
 uv sync
